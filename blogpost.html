@@ -1,0 +1,45 @@
+How to Model: Markov Chains
+
+</i>One should usually not take advice on modeling from a 5-foot tall nerdy asian girl, that is, unless it's Data Modeling we're talking about. (Whether or not you should take my advice then is up to your own discretion.) This summer, I'm interning at an education technology company, <a target="_blank" href="http://www.knewton.com/">Knewton</a>, where I have to great opportunity to model student behavior with real data. I'm learning a ton about what it takes to be a <a target="_blank" href="http://en.wikipedia.org/wiki/Data_science">Data Scientist</a>, although what concerns me more is the Scientist part, since the term is a bit of a buzzword anyway. Along the way, I figured I'd share some tidbits of knowledge with you. This post is <b>specifically</b> targeted towards <b>non-technical</b> people: my goal is to explain things in such a clear way that anyone with a healthy curiosity should be able to comprehend. I will focus on examples and fun demos, since that's how I learn best. Feedback appreciated!</i>
+
+WHAT IS A MARKOV CHAIN?
+A Markov chain, named after <a target="_blank" href="http://en.wikipedia.org/wiki/Andrey_Markov">this great moustached man</a> is a type of mathematical system composed of a finite number of discrete <i>states</i> and transitions between these states, denoted by their <i>transition</i> probabilities. The most important thing about a Markov Chain is that it satisfies the <b>Markov Property: that each state depends only on the state directly proceding it* and no others.</b> This <i>independence assumption</i> makes a Markov Chain easy to manipulate mathematically. (*This is a Markov Chain of degree 1, but you could also have a Markov Chain of degree <i>n</i> where we look at the past <i>n</i> states only.) A Markov Chain is a specific kind of <a target="_blank" href="http://en.wikipedia.org/wiki/Markov_process">Markov Process</a> with discrete states.
+
+A VISUAL
+That's a lot of words for a concept that is in fact very simple. Here's a picturesque example instead:
+
+Imagine that you are a small frog in a pond of lily pads. The pond is big but there are a countable (discrete) number of lily pads (states). You start on one lily pad (start state) and jump to the next with a certain probability (transition probability). When you're on one lily pad, you only think of the next one to jump to, and you don't really care about what lily pads you've jumped on in the past (memoryless).
+
+That's all!
+
+WHY DO WE USE IT?
+Markov Chains have many, many applications. (Check out <a target="_blank" href="http://en.wikipedia.org/wiki/Examples_of_Markov_chains">this Wikipedia page</a> for a long list.) They're useful whenever we have a chain of events, or a discrete set of possible states. A good example is a time series: at time 1, perhaps student S answers question A; at time 2, student S answers question B, and so on.
+
+A RANDOM TEXT GENERATOR
+Now, for the fun part! 
+
+For Knewton's company hackday, I've built a text analysis "funkit" that can perform a variety
+of fun things, given an input text file (corpus). You can clone the source code <a target="_blank" href="https://github.com/sbchou/Parakeet">here</a>. Don't worry if the word "cloning" sounds very scifi, you can check out the README that I've written (residing in that link) for detailed instructions on how to use the code. As long as you have python installed on your computer (Macs come pre-installed) you should be fine and dandy. 
+
+What we're most interested in is the parrot() function. This is the "Markov Chain Babbler" or Random Text Generator that mimics an input text. (Markov Chain Babblers are used to generate <a target="_blank"href="http://en.wikipedia.org/wiki/Lorem_ipsum">Lorem Ipsums (text fillers)</a> such as this wonderful <a target="_blank" href="http://slipsum.com/">Samuel L. Ipsum example</a>.
+
+Included are a few of my favorite sample "corpuses" (scary word for sample text) taken from Project Gutenburg, it includes:
+
+"memshl.txt" which is the complete Memoirs of Sherlock Holmes
+"kerouac.txt", an excerpt from On the Road
+"aurelius.txt", Marcus Aurelius' Meditations
+and finally, "nietzsche.txt", Nietzsche's Beyond Good and Evil.
+
+Here's a prime snippet of text generated using the Nietzsche corpus, of length 100, one of my favorites:
+
+"CONTEMPT. The moral physiologists. Do not find it broadens and a RIGHT OF RANK, says with other work is much further than a fog, so thinks every sense of its surface or good taste! For my own arts of morals in the influence of life at the weakening and distribution of disguise is himself has been enjoyed by way THERETO is thereby. The very narrow, let others, especially among things generally acknowledged to Me?.. Most people is a philosophy depended nevertheless a living crystallizations as well as perhaps in"
+
+Despite being "nonsense", it captures the essence of the German philosopher quite well. If you squint a little, it doesn't take much imagination to see this arise from the mouth of Nietzsche himself.
+
+Here's some Kerouac text, too:
+
+"Flat on a lot of becoming a wonderful night. I knew I wrote a young fellow in the next door, he comes in Frisco. That's rights. A western plateau, deep one and almost agreed to Denver whatever, look at exactly what he followed me at the sleeping. He woke up its bad effects, cooked, a cousin of its proud tradition. Well, strangest moment; into the night, grand, get that he was sad ride with a brunette. You reckon if I bought my big smile."
+
+HOW IT WORKS
+Parakeet
+
