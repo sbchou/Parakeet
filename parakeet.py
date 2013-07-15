@@ -74,4 +74,3 @@ class Parakeet:
             string = string.replace(" " + p, p)
 
         return string
-
