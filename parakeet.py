@@ -2,12 +2,7 @@
 sophie chou 2013
 
 Parakeet is a text analysis funkit.
-Given an input corpus,
-
-It contains the following functions:
-* parrot : Markov Chain Babbler
-* lolcat : translate to lolspeak
-* stats : generate basic stats
+Given an input corpus, you can "parrot" the writing style.
 
 """
 import sys
@@ -67,13 +62,4 @@ class Parakeet:
             string = string.replace(" " + p, p)
 
         return string
-
-def lolcat(string):
-    """Translate string to lolspeak"""
-    string = string.replace("I", "ai")
-    #string.replace(" I ", " ai ").replace("like", "leik").replace("you", "u").replace("ame", "aem").replace("ite", "iet").replace("ome", "oem").replace("serious", "srs").replace("your", "ur").lower().replace("ith", "if").replace("le", "el").replace("was", "wuz").replace("ely", "ly")
-
-    #lis[lis.index('one')] = 'replaced!'
-
-    return txt
 
