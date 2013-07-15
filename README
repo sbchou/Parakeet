@@ -1,0 +1,29 @@
+Parakeet.py
+
+This text processing "Funkit" takes an input corpus (text) and wraps it in a "Parakeet" object, allowing us to do fun things with it-- like generate random text ("parrot()").
+
+Contained are 4 sample texts:
+aurelius.txt, Marcus Aurelius' Meditations
+kerouac.txt, an excerpt of On the Road
+memshl.txt, the complete memoirs of Sherlock Holmes
+and nietzsche.txt, Nietzsche's Beyond Good and Evil.
+
+Here's how:
+1. Clone the repo, "git clone https://github.com/sbchou/Parakeet.git"
+2. Go into that directory
+3. fire up your python interpreter.
+4. type:
+	from parakeet import Parakeet
+	p = parakeet(open('filename', 'r'))
+	p.parrot(<number of words>)
+
+EXAMPLE:
+
+from parakeet import Parakeet
+p = parakeet(open('kerouac.txt', 'r'))
+p.parrot(100)
+
+
+"Flat on a lot of becoming a wonderful night. I knew I wrote a young fellow in the next door, he comes in Frisco. That's rights. A western plateau, deep one and almost agreed to Denver whatever, look at exactly what he followed me at the sleeping. He woke up its bad effects, cooked, a cousin of its proud tradition. Well, strangest moment; into the night, grand, get that he was sad ride with a brunette. You reckon if I bought my big smile."
+
+Checkout my blogpost for explanations:
