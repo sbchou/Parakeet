@@ -14,13 +14,13 @@ Here's how:
 3. fire up your python interpreter.
 4. type:
 	from parakeet import Parakeet
-	p = parakeet(open('filename', 'r'))
+	p = parakeet(<filename>)
 	p.parrot(<number of words>)
 
 EXAMPLE:
 
 from parakeet import Parakeet
-p = parakeet(open('kerouac.txt', 'r'))
+p = parakeet('kerouac.txt')
 p.parrot(100)
 
 

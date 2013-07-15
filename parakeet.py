@@ -11,14 +11,15 @@ from random import choice
 
 class Parakeet:
 
-    def __init__(self, corpus):
-        self.corpus = corpus
+    def __init__(self, corpus_path):
+        self.corpus = open(corpus_path, 'r')
         self.tokens = self.tokenize()
         self.bigrams = self.get_bigrams()
 
     def tokenize(self):
         """Split text by space and punctuation"""
-        tokens = re.findall(r"[\w']+|[.,!?;]", self.corpus)
+        body = self.corpus.read()
+        tokens = re.findall(r"[\w']+|[.,!?;]", body)
         return tokens
 
     def get_bigrams(self):
